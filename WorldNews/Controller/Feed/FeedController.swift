@@ -13,11 +13,11 @@ class FeedController: UITableViewController {
     
     private var articles = [ArticleModel]()
     private var filteredArticles = [ArticleModel]()
-    private let pageSize = 10
+    private let pageSize = 20
     private var page = 1
     private var readyToFetchNewPage = true
     
-    private let customRefreshControl: UIRefreshControl = {
+    private lazy var customRefreshControl: UIRefreshControl = {
        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
        return refreshControl
