@@ -160,7 +160,7 @@ class SettingsController: UIViewController {
         stackView.axis = .horizontal
         stackView.spacing = 4
         stackView.alignment = .center
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = .systemBackground
         self.view.addSubview(stackView)
         
         let stackViewTwo = UIStackView(arrangedSubviews: [countryStackView, sourceStackView])
@@ -168,7 +168,7 @@ class SettingsController: UIViewController {
         stackViewTwo.axis = .horizontal
         stackViewTwo.spacing = 4
         stackViewTwo.alignment = .center
-        stackViewTwo.backgroundColor = .white
+        stackViewTwo.backgroundColor = .systemBackground
         self.view.addSubview(stackViewTwo)
         
         let stackViewGeneral = UIStackView(arrangedSubviews: [stackView, stackViewTwo])

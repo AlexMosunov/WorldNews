@@ -31,7 +31,7 @@ struct Constants {
 
         
         let categoryPath = (category != nil) ? categoryInfo + category! : ""
-        let languagePath = (language != nil) ? languageInfo + language! : ""
+        let languagePath = (language != nil) ? languageInfo + language! : languageInfo + "en"
         let countryPath = (country != nil) ? countryInfo + country! : ""
         let sourcePath = (source != nil) ? sourceInfo + source! : ""
        

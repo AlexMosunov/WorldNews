@@ -28,11 +28,11 @@ struct ArticleCellViewModel {
     }
     
     var articleAuthor: String {
-        return article.author ?? "Nicholas Cage"
+        return article.author ?? ""
     }
     
     var articleSource: String {
-        return article.sourceName ?? "Bloomber business"
+        return article.sourceName ?? ""
     }
 
     
