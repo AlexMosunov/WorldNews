@@ -38,9 +38,12 @@ struct ArticleModel {
         self.publishedAt = publishedAt
     }
     
+    static var totalResults = 0
+    
     static func getArray(from json: Any) -> [ArticleModel]? {
         guard let json = json as? JSON else { return nil }
         guard let articles = json["articles"] as? Array<JSON> else { return nil}
+        totalResults = json["totalResults"] as? Int ?? 0
         return articles.compactMap { ArticleModel(json: $0) }
         
     }

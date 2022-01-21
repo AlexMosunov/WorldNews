@@ -15,6 +15,7 @@ class FeedController: UITableViewController {
     private var filteredArticles = [ArticleModel]()
     private let pageSize = 10
     private var page = 1
+    private var readyToFetchNewPage = true
     
     private let customRefreshControl: UIRefreshControl = {
        let refreshControl = UIRefreshControl()
@@ -151,9 +152,20 @@ extension FeedController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastItemIndex = inSearchMode ? filteredArticles.count - 1 : articles.count - 1
-        if indexPath.row == lastItemIndex {
-            fetchArticles()
+        if inSearchMode { return }
+        let lastItemIndex = articles.count - 1
+        if indexPath.row == lastItemIndex &&
+           articles.count >= pageSize &&
+            ArticleModel.totalResults > articles.count {
+            if readyToFetchNewPage {
+                readyToFetchNewPage = false
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+                    timer.invalidate()
+                    print("!!! fetchArticles")
+                    self.fetchArticles()
+                    self.readyToFetchNewPage = true
+                }
+            }
         }
     }
     

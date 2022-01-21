@@ -28,12 +28,18 @@ struct Constants {
                            source: String? = nil,
                            pageSize: Int,
                            page: Int? = 1) -> String {
-
         
         let categoryPath = (category != nil) ? categoryInfo + category! : ""
-        let languagePath = (language != nil) ? languageInfo + language! : languageInfo + "en"
+        var languagePath = (language != nil) ? languageInfo + language! : ""
         let countryPath = (country != nil) ? countryInfo + country! : ""
         let sourcePath = (source != nil) ? sourceInfo + source! : ""
+        
+        if category == nil &&
+            language == nil &&
+            country == nil &&
+            source == nil {
+            languagePath = languageInfo + "en"
+        }
        
         let apiKeyPath = apiKeyInfo + apiKey
         let pageSizePath = pageSizeInfo + String(pageSize)

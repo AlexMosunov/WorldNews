@@ -107,8 +107,8 @@ class SettingsController: UIViewController {
         setPickerViewsSelection()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         delegate?.didFinishSettingSettings()
     }
     
