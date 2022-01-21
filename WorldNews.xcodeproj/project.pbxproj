@@ -22,6 +22,10 @@
 		9AC1C7512798ADF900F65562 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C74F2798ADF800F65562 /* ArticleCell.swift */; };
 		9AC1C7522798ADF900F65562 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC1C7502798ADF800F65562 /* ArticleCell.xib */; };
 		9AC1C7542798AF9900F65562 /* ArticleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C7532798AF9900F65562 /* ArticleCellViewModel.swift */; };
+		9AC1C75627999D6700F65562 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C75527999D6700F65562 /* ImageDownloader.swift */; };
+		9AC1C7592799ADFA00F65562 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C7582799ADFA00F65562 /* WKWebViewController.swift */; };
+		9AC1C75C279AA54200F65562 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C75B279AA54100F65562 /* SettingsController.swift */; };
+		9AC1C7A3279AF86B00F65562 /* SettingsCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C7A2279AF86A00F65562 /* SettingsCategoriesModel.swift */; };
 		FEC222BB51D406A288BEED92 /* Pods_WorldNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB626694FB134582C878C04 /* Pods_WorldNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		9AC1C74F2798ADF800F65562 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		9AC1C7502798ADF800F65562 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		9AC1C7532798AF9900F65562 /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
+		9AC1C75527999D6700F65562 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9AC1C7582799ADFA00F65562 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		9AC1C75B279AA54100F65562 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		9AC1C7A2279AF86A00F65562 /* SettingsCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCategoriesModel.swift; sourceTree = "<group>"; };
 		CF9443B054C2CA6C54B83A95 /* Pods-WorldNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldNews.debug.xcconfig"; path = "Target Support Files/Pods-WorldNews/Pods-WorldNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +108,8 @@
 		9AC1C72F27986FC800F65562 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9AC1C7432798950200F65562 /* ArticleModel.swift */,
+				9AC1C7A2279AF86A00F65562 /* SettingsCategoriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 		9AC1C7332798702700F65562 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9AC1C75A279AA52000F65562 /* Settings */,
+				9AC1C7572799ADE900F65562 /* WebView */,
 				9AC1C7362798706F00F65562 /* MainTabBar */,
 				9AC1C7372798756C00F65562 /* Feed */,
 				9AC1C7382798757A00F65562 /* Favourites */,
@@ -134,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC1C7412798943F00F65562 /* AlamofireNetworkRequest.swift */,
-				9AC1C7432798950200F65562 /* ArticleModel.swift */,
+				9AC1C75527999D6700F65562 /* ImageDownloader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -179,6 +191,22 @@
 				9AC1C7502798ADF800F65562 /* ArticleCell.xib */,
 			);
 			path = ArticleCell;
+			sourceTree = "<group>";
+		};
+		9AC1C7572799ADE900F65562 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				9AC1C7582799ADFA00F65562 /* WKWebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		9AC1C75A279AA52000F65562 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9AC1C75B279AA54100F65562 /* SettingsController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		BBBDDFA0AF255120AF99AA51 /* Frameworks */ = {
@@ -313,14 +341,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC1C7A3279AF86B00F65562 /* SettingsCategoriesModel.swift in Sources */,
 				9AC1C71727986F3B00F65562 /* AppDelegate.swift in Sources */,
 				9AC1C72E27986F7600F65562 /* MainTabBarController.swift in Sources */,
+				9AC1C75627999D6700F65562 /* ImageDownloader.swift in Sources */,
 				9AC1C73A279875A100F65562 /* FeedController.swift in Sources */,
 				9AC1C73C279875AF00F65562 /* FavouritesController.swift in Sources */,
 				9AC1C7442798950200F65562 /* ArticleModel.swift in Sources */,
+				9AC1C75C279AA54200F65562 /* SettingsController.swift in Sources */,
 				9AC1C71927986F3B00F65562 /* SceneDelegate.swift in Sources */,
 				9AC1C72127986F3B00F65562 /* WorldNews.xcdatamodeld in Sources */,
 				9AC1C7422798943F00F65562 /* AlamofireNetworkRequest.swift in Sources */,
+				9AC1C7592799ADFA00F65562 /* WKWebViewController.swift in Sources */,
 				9AC1C73E27987C8700F65562 /* Extensions.swift in Sources */,
 				9AC1C7542798AF9900F65562 /* ArticleCellViewModel.swift in Sources */,
 				9AC1C7402798814200F65562 /* Constants.swift in Sources */,

@@ -15,7 +15,12 @@ struct ArticleCellViewModel {
     }
     
     var urlToImage: URL? {
-        return URL(string: article.urlToImage ?? "")
+        guard let urlString = article.urlToImage else { return nil }
+        return URL(string: urlString)
+    }
+    
+    var sourceUrlString: String? {
+        return article.url
     }
     
     var articleDescription: String {
