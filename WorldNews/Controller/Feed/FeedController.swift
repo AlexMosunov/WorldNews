@@ -100,13 +100,13 @@ class FeedController: UITableViewController {
     
     // MARK: Helpers
     
-    func configureTableView() {
+    private func configureTableView() {
         view.backgroundColor = .white
         tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: ArticleCell.reuseId)
         tableView.refreshControl = customRefreshControl
     }
     
-    func configureSearchController() {
+    private func configureSearchController() {
         searchConttroller.searchResultsUpdater = self
         searchConttroller.obscuresBackgroundDuringPresentation = false
         searchConttroller.hidesNavigationBarDuringPresentation = false
@@ -161,7 +161,6 @@ extension FeedController {
                 readyToFetchNewPage = false
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
                     timer.invalidate()
-                    print("!!! fetchArticles")
                     self.fetchArticles()
                     self.readyToFetchNewPage = true
                 }

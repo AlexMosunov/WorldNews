@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -66,19 +67,35 @@
                             <constraint firstAttribute="width" secondItem="J0d-pg-4cl" secondAttribute="height" multiplier="1:1" id="ZTW-fy-F4V"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-Pl-u2d">
+                        <rect key="frame" x="16" y="16" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="iEp-TA-6aU"/>
+                            <constraint firstAttribute="width" constant="25" id="v7h-6m-oUC"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="addToFavouritesButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ebk-Bt-tqr"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="red-Jm-Ts1" secondAttribute="bottom" constant="16" id="4LN-Qb-2vE"/>
                     <constraint firstAttribute="trailing" secondItem="red-Jm-Ts1" secondAttribute="trailing" constant="16" id="8gW-4R-4h7"/>
                     <constraint firstItem="red-Jm-Ts1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="FQH-9t-W5z"/>
+                    <constraint firstItem="v3r-Pl-u2d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="IEq-mV-2us"/>
                     <constraint firstAttribute="bottom" secondItem="J0d-pg-4cl" secondAttribute="bottom" constant="16" id="M5q-rx-PnE"/>
                     <constraint firstItem="red-Jm-Ts1" firstAttribute="leading" secondItem="J0d-pg-4cl" secondAttribute="trailing" constant="16" id="bGV-ox-Uxn"/>
+                    <constraint firstItem="v3r-Pl-u2d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="c7D-a1-pYM"/>
                     <constraint firstItem="J0d-pg-4cl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="cNW-Lh-iR6"/>
                     <constraint firstItem="J0d-pg-4cl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="pUD-Hl-JWt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addToFavouritesButton" destination="v3r-Pl-u2d" id="Tbs-kD-xSi"/>
                 <outlet property="authorLabel" destination="4Q2-RZ-NeT" id="DFa-CJ-XfZ"/>
                 <outlet property="descriptionLabel" destination="1XT-6w-R66" id="L7c-lq-W5z"/>
                 <outlet property="newsImageView" destination="J0d-pg-4cl" id="2f2-7X-gSG"/>
@@ -88,4 +105,10 @@
             <point key="canvasLocation" x="142.75362318840581" y="134.26339285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

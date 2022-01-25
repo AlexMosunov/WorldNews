@@ -38,6 +38,16 @@ struct ArticleModel {
         self.publishedAt = publishedAt
     }
     
+    init(favouriteArticle: Article) {
+        self.author = favouriteArticle.author
+        self.title = favouriteArticle.title
+        self.description = favouriteArticle.articleDescription
+        self.urlToImage = favouriteArticle.urlToImage
+        self.sourceName = favouriteArticle.sourceName
+        self.url = favouriteArticle.sourceUrl
+        self.publishedAt = favouriteArticle.publishedAt
+    }
+    
     static var totalResults = 0
     
     static func getArray(from json: Any) -> [ArticleModel]? {

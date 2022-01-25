@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A37C85F27A062CF00EB6FF9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37C85E27A062CE00EB6FF9 /* CoreDataManager.swift */; };
 		9AC1C71727986F3B00F65562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C71627986F3B00F65562 /* AppDelegate.swift */; };
 		9AC1C71927986F3B00F65562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C71827986F3B00F65562 /* SceneDelegate.swift */; };
 		9AC1C72127986F3B00F65562 /* WorldNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1C71F27986F3B00F65562 /* WorldNews.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		3508A2378F9A1ACA68F67AC3 /* Pods-WorldNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldNews.release.xcconfig"; path = "Target Support Files/Pods-WorldNews/Pods-WorldNews.release.xcconfig"; sourceTree = "<group>"; };
 		5CB626694FB134582C878C04 /* Pods_WorldNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A37C85E27A062CE00EB6FF9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9AC1C71327986F3B00F65562 /* WorldNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC1C71627986F3B00F65562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AC1C71827986F3B00F65562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				9AC1C7432798950200F65562 /* ArticleModel.swift */,
 				9AC1C7A2279AF86A00F65562 /* SettingsCategoriesModel.swift */,
+				9A37C85E27A062CE00EB6FF9 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				9AC1C71727986F3B00F65562 /* AppDelegate.swift in Sources */,
 				9AC1C72E27986F7600F65562 /* MainTabBarController.swift in Sources */,
 				9AC1C75627999D6700F65562 /* ImageDownloader.swift in Sources */,
+				9A37C85F27A062CF00EB6FF9 /* CoreDataManager.swift in Sources */,
 				9AC1C73A279875A100F65562 /* FeedController.swift in Sources */,
 				9AC1C73C279875AF00F65562 /* FavouritesController.swift in Sources */,
 				9AC1C7442798950200F65562 /* ArticleModel.swift in Sources */,

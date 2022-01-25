@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import CoreData
 
 protocol ArticleCellDelegate: AnyObject {
     func didTapImage(with url: String)
@@ -22,11 +23,13 @@ class ArticleCell: UITableViewCell {
     }
     
     weak var delegate: ArticleCellDelegate?
+    private var isFavourite = false
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
+    @IBOutlet var addToFavouritesButton: UIButton!
     @IBOutlet var newsImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -45,13 +48,36 @@ class ArticleCell: UITableViewCell {
         sourceLabel.text = viewModel.articleSource
         newsImageView.sd_setImage(with: viewModel.urlToImage)
         
+        addToFavouritesButton.setImage(UIImage(systemName: "star"), for: .normal)
+        addToFavouritesButton.setTitle("", for: .normal)
+        addToFavouritesButton.tintColor = .systemYellow
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         newsImageView.addGestureRecognizer(tap)
         newsImageView.isUserInteractionEnabled = true
     }
     
     
-    // MARK: Objc funcs
+    // MARK: Actions
+    
+    @IBAction func addToFavouritesButtonDidTap(_ sender: UIButton) {
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            guard let viewModel = viewModel else { return }
+            viewModel.initializeCoreDataEntity(Article(context: context))
+            
+            CoreDataManager.shared.saveContext()
+        }
+       
+        
+        isFavourite.toggle()
+        if isFavourite {
+            sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let urlString = viewModel?.sourceUrlString else { return }

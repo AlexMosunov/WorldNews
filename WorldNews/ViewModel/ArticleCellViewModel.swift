@@ -19,6 +19,10 @@ struct ArticleCellViewModel {
         return URL(string: urlString)
     }
     
+    var urlToImageString: String? {
+        return article.urlToImage ?? ""
+    }
+    
     var sourceUrlString: String? {
         return article.url
     }
@@ -34,10 +38,28 @@ struct ArticleCellViewModel {
     var articleSource: String {
         return article.sourceName ?? ""
     }
+    
+    var publishedAt: Date {
+        return article.publishedAt ?? Date()
+    }
+    
+    func initializeCoreDataEntity(_ entity: Article) {
+        entity.title = articleTitle
+        entity.articleDescription = articleDescription
+        entity.sourceName = articleSource
+        entity.publishedAt = publishedAt
+        entity.sourceUrl = sourceUrlString
+        entity.author = articleAuthor
+        entity.urlToImage = urlToImageString
+    }
 
     
     init(article: ArticleModel) {
         self.article = article
+    }
+    
+    init(favouriteArtivle: Article) {
+        self.article = ArticleModel(favouriteArticle: favouriteArtivle)
     }
     
 }

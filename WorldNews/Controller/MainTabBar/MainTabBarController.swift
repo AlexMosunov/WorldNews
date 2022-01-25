@@ -19,6 +19,7 @@ class MainTabBarController: UITabBarController {
         
         let feedVC = templateNavigationController(unselectedImage: UIImage(systemName: "list.bullet.circle"),
                                                   selectedImage: UIImage(systemName: "list.bullet.circle.fill"),
+                                                  title: "Feed",
                                                   rootViewController: FeedController())
         
         let favouritesVC = FavouritesController()
@@ -32,10 +33,11 @@ class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = .white
     }
     
-    func templateNavigationController(unselectedImage: UIImage?, selectedImage: UIImage?, rootViewController: UIViewController) -> UINavigationController {
+    func templateNavigationController(unselectedImage: UIImage?, selectedImage: UIImage?, title: String?, rootViewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewController)
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
+        nav.tabBarItem.title = title
         nav.navigationBar.tintColor = .black
         return nav
     }
